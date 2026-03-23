@@ -291,62 +291,195 @@ footer{background:#0a0f1a;padding:56px 0 28px;color:rgba(255,255,255,.5)}
 
 /* ── MOBILE ── */
 @media(max-width:640px){
-  .nav-inner{padding:0 16px}
-  .nav-logo-img{height:36px;width:36px}
-  .nav-name{font-weight:900;font-size:1.22rem;letter-spacing:-.01em;color:#0B4F9E;line-height:1;display:block}
-  .nav-hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;background:none;border:none;padding:4px;border-radius:8px;transition:background .15s}
+
+  /* ── NAV ── */
+  .nav-inner{padding:0 20px}
+  .nav-logo-img{height:34px;width:34px}
+  .nav-name{font-size:1.1rem}
+  .nav-sub{font-size:.65rem}
+  .nav-right .btn-wa{display:none}
+  .nav-hamburger{
+    display:flex;flex-direction:column;justify-content:center;
+    gap:5px;width:40px;height:40px;cursor:pointer;
+    background:none;border:none;padding:6px;
+    border-radius:8px;transition:background .15s;flex-shrink:0
+  }
   .nav-hamburger:hover{background:#f3f4f6}
   .nav-hamburger span{display:block;height:2px;background:#374151;border-radius:2px;transition:all .25s}
   .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
   .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;bottom:0;z-index:99;background:#fff;padding:16px;border-top:1px solid #e5e7eb;flex-direction:column;gap:2px;overflow-y:auto}
+
+  /* ── MOBILE MENU DRAWER ── */
+  .mobile-menu{
+    display:none;position:fixed;
+    top:62px;left:0;right:0;bottom:0;z-index:99;
+    background:#fff;padding:20px 20px 40px;
+    border-top:1px solid #e5e7eb;
+    flex-direction:column;gap:4px;overflow-y:auto
+  }
   .mobile-menu.open{display:flex}
-  .mobile-menu a{display:block;padding:13px 16px;border-radius:8px;font-size:.95rem;font-weight:600;color:#111827;transition:background .15s;border-bottom:1px solid #f3f4f6}
-  .mobile-menu a:hover{background:#f0f5ff;color:#0B4F9E}
-  .mobile-menu .m-cta{margin-top:10px;background:#25D366;color:#fff;border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:.9rem;border-bottom:none}
-  .mobile-menu .m-cta:hover{background:#1EB858}
-  .nav-right .btn-wa{display:none}
-  .hero{padding:78px 0 0}
-  .hero-wrap{gap:36px}
-  .hero h1{font-size:1.95rem}
-  .hero-sub{font-size:.95rem}
-  .hero-cta{flex-direction:column;align-items:stretch}
-  .hero-cta .btn{justify-content:center;width:100%}
-  .hero-note{font-size:.7rem}
+  .mobile-menu a{
+    display:block;padding:16px 18px;border-radius:10px;
+    font-size:1rem;font-weight:600;color:#111827;
+    transition:background .15s;border-bottom:1px solid #f1f5f9;
+    min-height:52px;display:flex;align-items:center
+  }
+  .mobile-menu a:active{background:#f0f5ff;color:#0B4F9E}
+  .mobile-menu .m-cta{
+    margin-top:16px;background:#25D366;color:#fff;
+    border-radius:12px;padding:18px 16px;
+    display:flex;align-items:center;justify-content:center;
+    gap:10px;font-weight:700;font-size:1rem;
+    border-bottom:none;min-height:56px
+  }
+  .mobile-menu .m-cta:active{background:#1EB858}
+
+  /* ── GLOBALS ── */
+  .w,.wsm{padding:0 20px}
+
+  /* ── HERO ── */
+  .hero{padding:74px 0 0;background:#f8fafc}
+  .hero-wrap{grid-template-columns:1fr;gap:0;padding-bottom:48px}
+  .hero-badge{font-size:.7rem;padding:5px 12px;margin-bottom:18px}
+  .hero h1{
+    font-size:clamp(1.85rem,7vw,2.2rem);
+    letter-spacing:-.03em;line-height:1.15;
+    margin-bottom:16px
+  }
+  .hero-sub{
+    font-size:.95rem;line-height:1.72;
+    margin-bottom:28px;max-width:100%
+  }
+  .hero-cta{flex-direction:column;gap:10px;margin-bottom:18px}
+  .hero-cta .btn{
+    justify-content:center;width:100%;
+    padding:16px 20px;font-size:.95rem;
+    min-height:52px
+  }
+  .hero-note{font-size:.7rem;flex-wrap:wrap;gap:4px}
   .mockup{display:none}
   .wa-pip{display:none}
-  .strip-in{gap:6px}
-  .s-tag{font-size:.67rem;padding:4px 9px}
-  .mod-sec,.wa-sec,.int-sec,.how-sec,.impl-sec,.price-sec,.faq-sec{padding:60px 0}
-  .w,.wsm{padding:0 16px}
-  .sec-eyebrow{font-size:.65rem}
-  h2.sec-title{font-size:1.7rem}
-  .sec-desc{font-size:.9rem}
-  .mod-grid{border-radius:12px}
-  .mod{padding:26px 20px}
-  .mod h3{font-size:1rem}
-  .wa-nums{gap:10px}
-  .wa-num-val{font-size:1.55rem}
+
+  /* ── TRUST STRIP ── */
+  .strip{padding:12px 0}
+  .strip-in{gap:6px;padding:0 20px}
+  .strip-lbl{display:none}
+  .s-tag{font-size:.68rem;padding:5px 10px;border-radius:100px}
+
+  /* ── SECTION GLOBALS ── */
+  .mod-sec,.wa-sec,.int-sec,.how-sec,.impl-sec,.price-sec,.faq-sec{padding:56px 0}
+  .sec-eyebrow{font-size:.67rem;margin-bottom:8px}
+  h2.sec-title{
+    font-size:clamp(1.6rem,6vw,2rem);
+    letter-spacing:-.03em;line-height:1.2;
+    margin-bottom:12px
+  }
+  .sec-desc{font-size:.9rem;line-height:1.72}
+
+  /* ── MÓDULOS ── */
+  .mod-grid{border-radius:12px;margin-top:36px}
+  .mod{padding:28px 22px}
+  .mod-num{margin-bottom:10px}
+  .mod-icon{width:40px;height:40px;font-size:1.1rem;margin-bottom:14px}
+  .mod h3{font-size:1rem;margin-bottom:6px}
+  .mod p{font-size:.875rem;margin-bottom:14px}
+  .mod-list{gap:6px;margin-bottom:20px}
+  .mod-list li{font-size:.825rem}
+  .mod-cta .btn{width:100%;justify-content:center;padding:12px 16px}
+
+  /* ── WA CONVICTION ── */
+  .wa-grid{gap:36px}
+  .wa-nums{grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+  .wa-num{padding:16px 14px;border-radius:10px}
+  .wa-num-val{font-size:1.6rem;margin-bottom:3px}
   .wa-num-lbl{font-size:.68rem}
   .phone-wrap{display:none}
-  .flow-card{padding:18px}
-  .int-tags{gap:6px}
-  .itag{font-size:.7rem;padding:5px 10px}
-  .steps{grid-template-columns:1fr;gap:28px}
-  .step{padding:0}
-  .step-c{margin-bottom:12px}
-  .price-card{padding:28px 20px}
-  .price-card h3{font-size:1.15rem}
-  .p-list{padding:14px 16px}
-  .cta-sec{padding:56px 0}
-  .cta-sec h2{font-size:1.65rem}
-  .cta-btns{flex-direction:column;align-items:stretch;gap:8px}
-  .cta-btns .btn{justify-content:center;width:100%}
-  .ft-g{grid-template-columns:1fr;gap:28px;padding-bottom:28px}
+
+  /* ── INTEGRAÇÃO ── */
+  .int-grid{gap:32px}
+  .int-sec .sec-desc{margin-bottom:18px}
+  .flow-card{padding:20px 18px;border-radius:14px}
+  .flow-row{padding:12px 0;gap:12px}
+  .flow-t{font-size:.8rem}
+  .flow-s{font-size:.7rem}
+  .int-tags{gap:7px;margin-top:18px}
+  .itag{font-size:.72rem;padding:6px 12px;border-radius:8px}
+
+  /* ── COMO FUNCIONA ── */
+  .how-hdr{margin-bottom:40px}
+  .steps{grid-template-columns:1fr;gap:0}
+  .steps::before{display:none}
+  .step{
+    display:flex;align-items:flex-start;gap:16px;
+    text-align:left;padding:18px 0;
+    border-bottom:1px solid #f1f5f9
+  }
+  .step:last-child{border-bottom:none;padding-bottom:0}
+  .step-c{
+    width:44px;height:44px;flex-shrink:0;
+    margin:0;font-size:1.1rem
+  }
+  .step-body{flex:1}
+  .step h3{font-size:.9rem;margin-bottom:4px}
+  .step p{font-size:.82rem}
+
+  /* ── IMPLEMENTAÇÃO ── */
+  .impl-grid{gap:36px}
+  .impl-list{gap:14px}
+  .impl-list li{font-size:.875rem}
+  .impl-list li strong{font-size:.9rem}
+  .impl-ico{width:22px;height:22px;font-size:.62rem;flex-shrink:0}
+  .impl-card{border-radius:14px}
+  .impl-card-hdr{padding:22px 22px 18px}
+  .impl-num{font-size:2.4rem}
+  .impl-steps{padding:16px 18px}
+  .impl-step{padding:11px 0;gap:12px}
+  .impl-step-t{font-size:.82rem}
+  .impl-step-s{font-size:.72rem}
+
+  /* ── PLANOS ── */
+  .price-card{
+    padding:28px 22px;border-radius:14px;
+    border-width:1.5px
+  }
+  .p-ico{font-size:1.75rem;margin-bottom:10px}
+  .price-card h3{font-size:1.15rem;margin-bottom:8px}
+  .price-card>p{font-size:.875rem;margin-bottom:20px}
+  .p-list{padding:14px 16px;gap:9px;border-radius:10px;margin-bottom:22px}
+  .p-list li{font-size:.835rem}
+  .p-list li::before{width:14px}
+  .price-card .btn{min-height:52px;font-size:.95rem}
+  .p-note{font-size:.72rem;margin-top:10px}
+
+  /* ── FAQ ── */
+  .faq-wrap{max-width:100%}
+  .faq-item{padding:18px 0}
+  .faq-q{font-size:.9rem;margin-bottom:8px}
+  .faq-a{font-size:.845rem;line-height:1.72}
+
+  /* ── CTA FINAL ── */
+  .cta-sec{padding:52px 0}
+  .cta-sec h2{font-size:clamp(1.55rem,6vw,1.9rem);margin-bottom:12px}
+  .cta-sec p{font-size:.9rem;margin-bottom:24px}
+  .cta-btns{flex-direction:column;gap:10px}
+  .cta-btns .btn{justify-content:center;width:100%;min-height:52px;font-size:.95rem}
+
+  /* ── FOOTER ── */
+  .ft-g{grid-template-columns:1fr;gap:32px;padding-bottom:32px}
+  .ft-brand p{font-size:.82rem;max-width:100%}
+  .ft-col h4{margin-bottom:12px}
+  .ft-links{gap:10px}
+  .ft-links a{font-size:.82rem}
   .ft-btm{flex-direction:column;align-items:center;text-align:center;gap:8px}
-  .ft-legal{justify-content:center}
-  .wa-float{width:48px;height:48px;bottom:16px;right:16px}
+  .ft-legal{justify-content:center;gap:20px}
+
+  /* ── WA FLOAT ── */
+  .wa-float{
+    width:52px;height:52px;
+    bottom:20px;right:20px
+  }
+  .wa-float svg{width:24px;height:24px}
 }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -668,10 +801,10 @@ footer{background:#0a0f1a;padding:56px 0 28px;color:rgba(255,255,255,.5)}
       <p class="sec-desc">Configuração guiada. Sem código. Sem chamado de TI.</p>
     </div>
     <div class="steps">
-      <div class="step rv"><div class="step-c">📱</div><h3>Conecte seu número</h3><p>Configuração guiada passo a passo para conectar seu WhatsApp.</p></div>
-      <div class="step rv d1"><div class="step-c">👥</div><h3>Importe seus contatos</h3><p>Suba um CSV ou sincronize direto do CRM. Validamos automaticamente.</p></div>
-      <div class="step rv d2"><div class="step-c">⚙️</div><h3>Ative seus módulos</h3><p>Configure só o que você contratou — tudo pelo painel, sem código.</p></div>
-      <div class="step rv d3"><div class="step-c">📈</div><h3>Acompanhe em tempo real</h3><p>Métricas de entrega, abertura, resposta e conversão de cada ação.</p></div>
+      <div class="step rv"><div class="step-c">📱</div><div class="step-body"><h3>Conecte seu número</h3><p>Configuração guiada passo a passo para conectar seu WhatsApp.</p></div></div>
+      <div class="step rv d1"><div class="step-c">👥</div><div class="step-body"><h3>Importe seus contatos</h3><p>Suba um CSV ou sincronize direto do CRM. Validamos automaticamente.</p></div></div>
+      <div class="step rv d2"><div class="step-c">⚙️</div><div class="step-body"><h3>Ative seus módulos</h3><p>Configure só o que você contratou — tudo pelo painel, sem código.</p></div></div>
+      <div class="step rv d3"><div class="step-c">📈</div><div class="step-body"><h3>Acompanhe em tempo real</h3><p>Métricas de entrega, abertura, resposta e conversão de cada ação.</p></div></div>
     </div>
   </div>
 </section>
